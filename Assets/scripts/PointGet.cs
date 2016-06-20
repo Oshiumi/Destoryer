@@ -1,21 +1,25 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PointGet : MonoBehaviour {
-    public GameManager gm;
-    public GameObject gameManager;
+public class PointGet : MonoBehaviour
+{
+	public GameManager gm;
+	public GameObject gameManager;
 
 	// Use this for initialization
-	void Start () {
-        gm = gameManager.GetComponent<GameManager>();
-    }
+	void Start ()
+	{
+		gm = gameManager.GetComponent<GameManager> ();
+	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 	}
 
-    void OnCollisionEnter()
-    {
-        gm.sum += 100;
-    }
+	void OnCollisionEnter (Collision collision)
+	{
+		if (collision.gameObject.tag == "AttackObj")
+			gm.score += 100;
+	}
 }
