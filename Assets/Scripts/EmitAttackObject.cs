@@ -4,7 +4,7 @@ using System.Collections;
 public class EmitAttackObject : MonoBehaviour {
 
   public GameObject attackObjectPrefab;
-  public float initialSpeed;
+  public float initialSpeed; 
 
   // Use this for initialization
   void Start () {
