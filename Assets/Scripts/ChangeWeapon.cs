@@ -4,7 +4,7 @@ using System.Collections;
 public class ChangeWeapon : MonoBehaviour {
 
     public GameObject[] weapons;
-    private int index;
+    private int weaponIndex;
 
     // Use this for initialization
     void Start () {
@@ -16,22 +16,22 @@ public class ChangeWeapon : MonoBehaviour {
         equip.transform.parent = transform;
     }
 	
-	// Update is called once per frame
-	void Update () {
+    // Update is called once per frame
+    void Update () {
         // ホイール入力を取得
-	    float input = Input.GetAxis("Mouse ScrollWheel");
+	    float wheelInput = Input.GetAxis("Mouse ScrollWheel");
         // キーボード入力の取得
-        int num = keyNumber();
+        int keyNum = keyNumber();
 
-        if(input < 0) {
-            index = (index + 1) % weapons.Length;
-            Change(index);
-        } else if(input > 0) {
-            index = (weapons.Length + index - 1) % weapons.Length;
-            Change(index);
-        } else if(0 < num && num <= weapons.Length) {
-            index = num - 1;
-            Change(index);
+        if(wheelInput < 0) {
+            weaponIndex = (weaponIndex + 1) % weapons.Length;
+            Change(weaponIndex);
+        } else if(wheelInput > 0) {
+            weaponIndex = (weapons.Length + weaponIndex - 1) % weapons.Length;
+            Change(weaponIndex);
+        } else if(0 < keyNum && keyNum <= weapons.Length) {
+            weaponIndex = keyNum - 1;
+            Change(weaponIndex);
         }
     }
 
