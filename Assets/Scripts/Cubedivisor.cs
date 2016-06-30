@@ -6,19 +6,12 @@ public class Cubedivisor : MonoBehaviour {
 	int i,j,k;
 	Vector3 cubepos,newcubepos,cubescale,newcubescale,rb1,rb2;
 	Rigidbody RB,newRB;
-	public float vmlim,scalelim,divisor;
+	public float vmlim=2f,scalelim=0.5f,divisor=8f;
 	//vmlim:衝撃耐性（のつもり）大きいほど破壊されにくい
 	//scalelim:分割のサイズ制限（小さすぎると処理落ち）
 	//divisor:分割後ブロックに伝える衝撃の減衰
 	//固定値にしてしまってもいいかもしれない
 	void Start () {
-		//設定しなかった場合の初期値
-		if (vmlim == 0)
-			vmlim = 2f;
-		if (scalelim == 0)
-			scalelim = 0.5f;
-		if (divisor == 0)
-			divisor = 8f;
 	}
 
 	// Update is called once per frame
