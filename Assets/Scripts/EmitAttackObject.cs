@@ -19,12 +19,10 @@ public class EmitAttackObject : MonoBehaviour {
       Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
       RaycastHit hit;
       if ( Physics.Raycast(ray, out hit, raycastMax) ) {
-        Vector3 pos = transform.position;
-                pos.y -= 0.5f;
         // attackObject を複製
-        GameObject attackObject = (GameObject)Instantiate(attackObjectPrefab, pos, transform.rotation);
+        GameObject attackObject = (GameObject)Instantiate(attackObjectPrefab, transform.position, transform.rotation);
         // *** 要検証 *** 攻撃オブジェクトの発射方向を計算
-        Vector3 direction = hit.point - pos;
+        Vector3 direction = hit.point - transform.position;
         // attackObject に初速を追加
         attackObject.GetComponent<Rigidbody> ().velocity = direction * initialSpeed;
       }
