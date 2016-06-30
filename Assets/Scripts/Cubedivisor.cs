@@ -56,7 +56,7 @@ public class Cubedivisor : MonoBehaviour {
 				//元オブジェクトを削除
 				Destroy (this.gameObject);
 			} else {
-				
+				Destroy (this.gameObject);
 			}
 		}
 		//現在のフレームのベクトルの大きさをrb2に代入
