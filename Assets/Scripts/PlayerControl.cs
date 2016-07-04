@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Control : MonoBehaviour {
+public class PlayerControl : MonoBehaviour {
 
     float X_Speed = 1;
     float Z_Speed = 1;
