@@ -14,6 +14,7 @@ public class FollowCamera : MonoBehaviour {
 	private Vector2 dragStartPosition = Vector2.zero;
 	private Vector2 delta = Vector2.zero;
 
+
 	void CheckDragging(){
 		// ドラッグの開始
 		if(Input.GetMouseButtonDown(0)){
@@ -33,6 +34,8 @@ public class FollowCamera : MonoBehaviour {
 	// Update is called once per frame
 	void LateUpdate () {
 		CheckDragging();
+		Debug.Log(dragging);
+
 		// ドラッグ入力でカメラのアングルを更新する.
 		if(dragging){
 			float anglePerPixel = rotAngle / (float)Screen.width;
@@ -63,5 +66,8 @@ public class FollowCamera : MonoBehaviour {
 			if (Physics.Linecast(lookPosition,transform.position,out hitInfo,1<<LayerMask.NameToLayer("Ground")))
 				transform.position = hitInfo.point;
 		}
+
+		// targetのrotationとカメラのrotationを一致させる．
+		lookTarget.right = this.transform.right;
 	}
 }
