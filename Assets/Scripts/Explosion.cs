@@ -14,10 +14,11 @@ public class Explosion : MonoBehaviour
 	void Update ()
 	{
 	}
-
+		
 	void OnCollisionEnter (Collision collision)
 	{
-		if (collision.gameObject.tag == "Attackobj")
-			Instantiate (explosion, collision.transform.position, Quaternion.identity);			
+		if (collision.gameObject.tag == "AttackObj") {
+			Instantiate (explosion, collision.transform.position, Quaternion.identity);
+		}
 	}
 }
