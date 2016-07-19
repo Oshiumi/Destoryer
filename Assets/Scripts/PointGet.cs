@@ -5,7 +5,7 @@ public class PointGet : MonoBehaviour
 {
 	public GameManager gm;
 	public GameObject gameManager;
-
+    public bool getflag=false;
 	// Use this for initialization
 	void Start ()
 	{
@@ -21,5 +21,6 @@ public class PointGet : MonoBehaviour
 	{
 		if (collision.gameObject.tag == "AttackObj")
 			gm.score += 100;
+            getflag = true;
 	}
 }
