@@ -1,0 +1,7 @@
+diff a/Assets/Scripts/GameManager.cs.meta b/Assets/Scripts/GameManager.cs.meta	(rejected hunks)
+@@ -1,4 +1,5 @@
+  fileFormatVersion: 2
+++<<<<<<< 61f709c717718589b848654d4301db8b30943200
+ +guid: f707adc966ba2b048a5673150a63281d
+ +timeCreated: 1467170972
+ +=======
