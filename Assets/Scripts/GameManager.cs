@@ -3,7 +3,10 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-	public int score = 0;
+	public int score,clearscore=100;
+	public bool endFlag=false;
+	public GUIText clearText;
+	public string nextscene;
 
 	// Use this for initialization
 	void Start ()
@@ -14,5 +17,14 @@ public class GameManager : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if (score >= clearscore) {
+			endFlag = true;
+			clearText.text = "CLEAR\nScore:"+score;
+			if (Input.GetMouseButtonDown (0)) {
+				Application.LoadLevel (nextscene);
+
+			}
+
+		}
 	}
 }
