@@ -5,7 +5,7 @@ public class EmitAttackObject : MonoBehaviour {
 
   public GameObject attackObjectPrefab;
   public float initialSpeed;        // 攻撃オブジェクトの発射速度
-  public float raycastMax = 100.0f; // 射程距離
+  public float raycastMax = 10000.0f; // 射程距離
 
   // Use this for initialization
   void Start () {
